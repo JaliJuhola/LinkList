@@ -17,7 +17,7 @@ public class Link {
     public final static String WITHOUTSSL = "http://";
 
     public Link(String url) {
-
+        System.out.println(url);
         if (url.startsWith(WITHSSL)) {
             url = url.replace(WITHSSL, "");
             containsSsl = true;
@@ -30,7 +30,7 @@ public class Link {
 
         this.wholeLink = url;
         String parts[] = url.split("/");
-        linkRoutes = null;
+        linkRoutes = new String[5];
         if (parts.length > 1) // link has additional routes.
         {
             this.linkDns = parts[0];
